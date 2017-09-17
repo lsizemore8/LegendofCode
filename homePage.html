@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+  <link href="https://fonts.googleapis.com/css?family=Rye" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Orbitron" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Bad+Script|Gloria+Hallelujah" rel="stylesheet">
+
+<head>
+  <title>home page </title>
+
+  <style>
+body{
+  background-image: url(http://images.all-free-download.com/images/graphicthumb/old_paper_scrolls_and_candle_design_vector_523456.jpg);
+  background-color:black;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  left: -50px;
+  top: 30px;
+  font-size: 10px;
+  }
+
+  .questButton{
+     position: absolute;
+     top: 130%;
+     left: 25%;
+     width: 50%;
+     height: 25%;
+     font-size: 5em;
+     background-color:orange;
+   }
+  .font1{
+    font-family: 'Gloria Hallelujah', cursive;
+    font-size:5.5em;
+    text-align: center;
+    position: relative;
+    top: 30px;
+    text-shadow: 2px 3px white;
+  }
+  .font2 {
+    font-family: Rye;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+    border:0;
+    top: 400px;
+
+  }
+.font2:hover {background-color: #ffddcc}
+
+		.font2:active {
+				background-color: #ffddcc;
+  			box-shadow: 0 5px #666;
+      	transform: translateY(4px);
+			}
+    img{
+      border-radius: 50%
+        height: 25%;
+       width: 12%;
+      position: relative;
+      top: 25px;
+      left: 550px;
+    }
+    h1
+    {
+      position: relative;
+      top: 75px;
+    }
+.settingsButton{
+  position: absolute;
+  top: 4%;
+  left: 74%;
+  height:3.125rem;
+  width:3.125rem;
+  background-image: url(https://publicdomainvectors.org/photos/emblem-system.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border:0;
+
+}
+.logoutButton{
+  position: absolute;
+  top: 4%;
+  left: 20%;
+  width: 3.125rem;
+  height: 3.125rem;
+  font-size: 3em;
+   background-image: url(https://publicdomainvectors.org/photos/artmaster_logout_mini_icon.png);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-color: transparent;
+  border:0;
+
+}
+.candle {
+  position: absolute;
+  left: 85%;
+  height: 18.70rem;
+  width: 18rem;
+  top:75%;
+}
+
+#overlay {
+    position: fixed;
+    display: none;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0,0,0,0.5);
+    z-index: 2;
+    cursor: pointer;
+}
+
+#text{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    font-size: 90px;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+}
+
+ul{
+	position: absolute;
+    top: 30%;
+    left: 25%;
+	color:white;
+    font-size: 30px;
+    font-family: 'Orbitron', sans-serif;
+    list-style-type: none;
+
+}
+
+li {
+  padding: 10px;
+  overflow: auto;
+  font-size: 30px;
+}
+
+li:hover {
+  background: gray;
+  cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+  <h1 class = "font1 center"> Welcome back! </h1>
+  <img src = "https://publicdomainvectors.org/photos/Caricatura_de_una_chica_soriendo.png" />
+  <div>
+  <button class = "font2 questButton" type="button"><a href = "questMap.html">Go to Quest Map! </a></button>
+  <button class = "font2 settingsButton" type="button" onclick="on()"> </button>
+  <button class = "font2 logoutButton" type="button "></button>
+  </div>
+
+<div id="overlay" onclick="off()">
+  <div id="text">Settings</div>
+  <ul>
+  <li class="sound">Toggle Sound</li>
+  <li class="programing">Change Programing Language</li>
+	</ul>
+</div>
+
+<img class = candle src = "candle.gif"/>
+
+<script>
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
+</script>
+
+</body>
+</html>

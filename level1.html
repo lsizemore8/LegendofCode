@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<link href="https://fonts.googleapis.com/css?family=Niconne|Nothing+You+Could+Do|Orbitron|Paytone+One|Rock+Salt" rel="stylesheet">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>Editor</title>
+  <style type="text/css" media="screen">
+  .p1{
+   font-size:20px;
+ }
+ .p2{
+   font-size: 14px;
+ }
+ .span1{
+   color: red;
+   font-weight:bold;
+ }
+ em{
+   color:blue;
+   font-weight:bold;
+ }
+    body {
+        overflow: hidden;
+    }
+
+    #editor {
+        margin: 0;
+        position: absolute;
+        top: 400px;
+        height: 300px;
+        bottom: 0;
+        left: 0px;
+        right: 0px;
+    }
+    .settingsButton
+          {
+    		font-family: 'Orbitron', sans-serif;
+            font-size:30x;
+            box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+          }
+
+    		.settingsButton:hover {background-color: #A52A2A}
+
+    		.settingsButton:active {
+    				background-color: #A52A2A;
+      			box-shadow: 0 5px #666;
+          	transform: translateY(4px);
+    			}
+    .logoutButton{
+      position: absolute;
+      top: 100px;
+      left: 90%;
+      width: 3.125rem;
+      height: 3.125rem;
+      font-size: 3em;
+       background-image: url(https://publicdomainvectors.org/photos/artmaster_logout_mini_icon.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: transparent;
+      border:0;
+
+    }
+    .returnToQuestButton{
+      position: absolute;
+      top: 100px;
+      left: 70%;
+      height:3.125rem;
+      width:3.125rem;
+      background-image: url(https://publicdomainvectors.org/photos/Map-Pointer.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: transparent;
+      border:0;
+    }
+
+    .settingsButton{
+      position: absolute;
+      top: 100px;
+      left: 80%;
+      height:3.125rem;
+      width:3.125rem;
+      background-image:url(https://publicdomainvectors.org/photos/emblem-system.png);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-color: transparent;
+      border:0;
+        }
+
+    #overlay {
+        position: fixed;
+        display: none;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: rgba(0,0,0,0.5);
+        z-index: 2;
+        cursor: pointer;
+    }
+
+    #text{
+        position: absolute;
+        top: 20%;
+        left: 50%;
+        font-size: 90px;
+        font-family: 'Orbitron', sans-serif;
+        color: white;
+        transform: translate(-50%,-50%);
+        -ms-transform: translate(-50%,-50%);
+}
+     ul {
+    	position: absolute;
+        top: 30%;
+        left: 25%;
+    	  color:white;
+        font-size: 30px;
+        font-family: 'Orbitron', sans-serif;
+        list-style-type: none;
+        or;
+    }
+
+    li {
+      padding: 10px;
+      overflow: auto;
+    }
+
+    li:hover {
+      background: gray;
+      cursor: pointer;
+    }
+
+    a:link {
+        text-decoration: none;
+    }
+
+    a:visited {
+        text-decoration: none;
+        color:white;
+    }
+
+    a:hover {
+        text-decoration: none;
+    }
+
+    a:active {
+        text-decoration: none;
+    }
+
+  </style>
+</head>
+<body>
+  <button class = "settingsButton" onclick="on()" type="button"> </button>
+  <button class = "font2 logoutButton"type="button"></button>
+
+ <p class = p2>Answer: You could thing of them as
+   storage units for values.
+   The three major types of variables are:
+   int, float, and string
+   (words). Instead of having to repeatedly retrieve the same data, the variable is stored in computer
+  memory once and used wherever needed. </p>
+  <p class = p2> To initialize a variable, write var varName = value. The varName
+    and value can be whatever you want them to be.
+  <p class = p1>First Thing: How to Print Output</p>
+   <p class = p2>Use the method: <span class = span1>console.log</span>("string")</p>
+<hr>
+<p class = p1> <strong>The Challenge!</strong> </p>
+<p class= p2>Task: Print out the sentence below. Press Ctrl-M or Command-M when you are done.
+    Make sure the format matches this:</p>
+<p class = p2>"Cornell's Founding Date is: April 27th, 1865."</p>
+<p class = p2>Initialize and use the following variables:</p>
+<p class = p2>a = "April", b = 27, and c = 1865</p>
+<pre id="editor">function printDate() {
+  //Write your code here!
+    }
+    printDate();
+</pre>
+<div id="overlay" onclick="off()">
+  <div id="text">Settings</div>
+  <ul>
+  <li class="sound">Toggle Sound</li>
+  <li class="programing">Change Programing Language</li>
+  <li class="reset">Reset</li>
+  <li class="home" ><a href = "questMap.html">  Back to Map </a> </li>
+	</ul>
+</div>
+
+
+<script src="src-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+function on() {
+    document.getElementById("overlay").style.display = "block";
+}
+
+function off() {
+    document.getElementById("overlay").style.display = "none";
+}
+    var editor = ace.edit("editor");
+    editor.setTheme("ace/theme/twilight");
+    editor.session.setMode("ace/mode/javascript");
+    editor.commands.addCommand({
+    name: 'myCommand',
+    bindKey: {win: 'Ctrl-M',  mac: 'Command-M'},
+    exec: function(editor) {
+      var l = editor.session.getLength();
+      var fullText = editor.session.getTextRange(0, l);
+      if(eval(fullText) == "April 27th, 1865")
+      {
+       editor.setValue("Congrats! You did it! Click on the 'Back to Quest Map'to move on");
+      }
+      else{
+        editor.setValue("Try again! Make sure your format is exactly like the example");
+      }
+    },
+    readOnly: true // false if this command should not apply in readOnly mode
+});
+
+</script>
+
+</body>
+</html>
